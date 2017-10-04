@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApplicationDotNetCore.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace WebApplicationDotNetCore.Controllers
 {
@@ -82,15 +83,16 @@ namespace WebApplicationDotNetCore.Controllers
         ///     GET api/values/1/helen
         ///
         /// </remarks>
-        /// <param name="id"></param>
-        /// /// <param name="name"></param>
-        /// <returns>A person</returns>
-        /// <response code="200">Returns a person</response>
-        /// <response code="400">If the value is null</response>            
+        ///// <param name="id"></param>
+        ///// /// <param name="name"></param>
+        ///// <returns>A person</returns>
+        ///// <response code="200">Returns a person</response>
+        ///// <response code="400">If the value is null</response>            
         [HttpGet("{id}/{name}")]
         //[Route("values/person/")]
-        [ProducesResponseType(typeof(string), 200)]
-        [ProducesResponseType(typeof(string), 400)]
+        //[ProducesResponseType(typeof(string), 200)]
+        //[ProducesResponseType(typeof(string), 400)]
+        [SwaggerResponse((int)System.Net.HttpStatusCode.OK, Type = typeof(Person))]
         public ActionResult GetPerson(int id, string name)
         {
             var pers = PersonList.FirstOrDefault(p => p.Id.Equals(id) && p.Name.ToUpper().Equals(name.ToUpper()));
