@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Api.Demo.Tests
+namespace Api.Demo.Tests.Controllers
 {
     [TestFixture]
     public class ProductControllerTest

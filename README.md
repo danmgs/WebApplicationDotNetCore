@@ -12,7 +12,7 @@ Schema below will show the main elements :
 
 ```
 | -- /Api.Demo.Core
-     | -- Interfaces
+     | -- /Interfaces
           | -- IManagerClient.cs
           | -- ISearchClient.cs
      | -- AbsractBaseElastic.cs
@@ -22,17 +22,37 @@ Schema below will show the main elements :
 | -- /Api.Demo.Models                     -> contains all models shared accross projects
 
 | -- /Api.Demo.Tests
+     | -- /Controllers
+          | -- ProductControllerTest.cs
+     | -- /Elastic
+          | -- ElasticMonitorClientTest.cs
+          | -- ElasticSearchClientTest.cs
 
 | -- /WebApplicationDotNetCore
-     | -- appsettings.json
-     | -- Program.cs
-     | -- Startup.cs              
      | -- /Controllers 
      | -- /Models                         -> contains all web app specific models
           | -- /Config                    -> contains all models for web app settings
      | -- /Views 
+     | -- appsettings.json
+     | -- bower.json
+     | -- bundleconfig.json
+     | -- Program.cs
+     | -- Startup.cs              
 
+```
 
+## Prerequisites and setup
+
+### Seed ElastictSearch cluster with data.
+
+1. Start elasticsearch cluster first.
+
+2. In order to create the **product** index, the data file is available in **SolutionItems\datasamples** directory. 
+
+Command to bulk insert products from file **products-bulk.json** under kibana dev tool :
+```
+POST /product/default/_bulk
+[put here file content]
 ```
 
 ## How To

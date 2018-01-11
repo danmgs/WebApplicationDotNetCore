@@ -13,7 +13,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Demo.Models", "Api.Demo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{59E56665-6A31-450C-AD9E-754E9CDCE592}"
 	ProjectSection(SolutionItems) = preProject
+		..\Elasticsearch-Nodejs.Quickstart\server\datasamples\products-bulk.json = ..\Elasticsearch-Nodejs.Quickstart\server\datasamples\products-bulk.json
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "datasamples", "datasamples", "{4263DB40-ED9A-4A71-8CD8-85B0C3B1718B}"
+	ProjectSection(SolutionItems) = preProject
+		..\Elasticsearch-Nodejs.Quickstart\server\datasamples\products-bulk.json = ..\Elasticsearch-Nodejs.Quickstart\server\datasamples\products-bulk.json
 	EndProjectSection
 EndProject
 Global
@@ -41,6 +47,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4263DB40-ED9A-4A71-8CD8-85B0C3B1718B} = {59E56665-6A31-450C-AD9E-754E9CDCE592}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5E2A57F5-7662-43A3-9346-3BB368E535AD}

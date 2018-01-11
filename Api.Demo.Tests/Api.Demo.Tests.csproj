@@ -59,9 +59,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppSettings.tt</DependentUpon>
     </Compile>
-    <Compile Include="ElasticMonitorClientTest.cs" />
-    <Compile Include="ElasticSearchClientTest.cs" />
-    <Compile Include="ProductControllerTest.cs" />
+    <Compile Include="Elastic\ElasticMonitorClientTest.cs" />
+    <Compile Include="Elastic\ElasticSearchClientTest.cs" />
+    <Compile Include="Controllers\ProductControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

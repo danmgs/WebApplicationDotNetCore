@@ -3,7 +3,7 @@ using Api.Demo.Core.Interfaces;
 using NUnit.Framework;
 using System;
 
-namespace Api.Demo.Tests
+namespace Api.Demo.Tests.Elastic
 {
     [TestFixture]
     public class ElasticMonitorClientTest

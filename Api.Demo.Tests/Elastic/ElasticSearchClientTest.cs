@@ -6,7 +6,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Api.Demo.Tests
+namespace Api.Demo.Tests.Elastic
 {
     [TestFixture]
     public class ElasticSearchClientTest
