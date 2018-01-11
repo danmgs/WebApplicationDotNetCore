@@ -27,7 +27,7 @@ Postman client to test available web api endpoints :
 Schema below will show the main elements :
 
 ```
-| -- /Api.Demo.Core
+| -- /Api.Demo.Core                       -> contains ElasticSearch client wrappers
      | -- /Interfaces
           | -- IManagerClient.cs
           | -- ISearchClient.cs
@@ -37,7 +37,6 @@ Schema below will show the main elements :
 
 | -- /Api.Demo.Models                     -> contains all models shared accross projects
      | -- Person.cs
-     | -- Product.cs
 
 | -- /Api.Demo.Tests
      | -- /Controllers
@@ -48,6 +47,7 @@ Schema below will show the main elements :
 
 | -- /WebApplicationDotNetCore
      | -- /Controllers 
+          | -- ProductController.cs
      | -- /Models                         
           | -- /Config                    -> contains all models for web app settings
 		        | -- ElasticSearchSettings.cs
@@ -105,7 +105,7 @@ https://dzimchuk.net/generating-clients-for-your-apis-with-autorest/
 C:\Apps\Tools\Autorest>autorest --input-file=swagger.yaml --csharp --output-folder=CSharp_MyClient --namespace=MyClientNamesp
 ```
 
-The generated codes sources has been put into directory **\Api.Demo.Swagger.Generated.Client**
+The generated codes sources has been put into directory **\Demo.Swagger.Generated.Client**
 <br />
 
 ## Useful Links
