@@ -1,8 +1,11 @@
 
 # WEB API WITH SWAGGER (2018)
 
-An application that exposes web api url, by leveraging Swagger, ElasticSearch and asp.net core.
+An application that exposes web api url, by leveraging Swagger, ElasticSearch and ASP.NET Core.
 
+Postman client to test available web api endpoint :
+
+![alt capture1](https://github.com/danmgs/Elasticsearch-Nodejs.Quickstart/blob/master/img/screenshot1.PNG)
 
 ## Folders Organisation
 
