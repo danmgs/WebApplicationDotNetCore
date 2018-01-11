@@ -3,7 +3,7 @@
 
 An application that exposes web api url, by leveraging Swagger, ElasticSearch and ASP.NET Core.
 
-Postman client to test available web api endpoint :
+Postman client to test available web api endpoints :
 
 ![alt capture1](https://github.com/danmgs/WebApplicationDotNetCore/blob/master/img/screenshot1.PNG)
 
