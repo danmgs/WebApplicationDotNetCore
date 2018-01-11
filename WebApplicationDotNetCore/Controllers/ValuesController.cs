@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApplicationDotNetCore.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using log4net;
 
 namespace WebApplicationDotNetCore.Controllers
 {
@@ -12,6 +13,8 @@ namespace WebApplicationDotNetCore.Controllers
     [Produces("application/json")]
     public class ValuesController : Controller
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(ValuesController));
+
         List<Person> PersonList = new List<Person>
         {
             new Person() { Id = 1, Age = 10, Name = "Helen" },

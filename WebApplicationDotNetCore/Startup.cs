@@ -10,6 +10,10 @@ using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.Extensions.PlatformAbstractions;
 using System.IO;
+using WebApplicationDotNetCore.Models.Config;
+using Api.Demo.Core.Interfaces;
+using Api.Demo.Models;
+using Api.Demo.Core;
 
 namespace WebApplicationDotNetCore
 {
@@ -32,6 +36,16 @@ namespace WebApplicationDotNetCore
         {
             // Add framework services.
             services.AddMvc();
+
+            // Add custom settings dependencies
+            services.Configure<ElasticSearchSettings>(Configuration.GetSection("ElasticSearchSettings"));
+
+            // Add custom services
+            //services.AddTransient<ISearchClient<Product>, ElasticSearchClient<Product>>();
+            //services.AddTransient<IManagerClient, ElasticManagerClient>();
+
+            services.AddTransient<IManagerClient>(s => new ElasticManagerClient(@"http://localhost:9200", "product"));
+            services.AddTransient<ISearchClient<Product>>(s => new ElasticSearchClient<Product>(@"http://localhost:9200", "product"));
 
             // Register the Swagger generator, defining one or more Swagger documents
             services.AddSwaggerGen(c =>
