@@ -27,34 +27,64 @@ namespace WebApplicationDotNetCore.Controllers
         public ProductController(ISearchClient<Product> searchClient, IManagerClient managerClient, IOptions<ElasticSearchSettings> elasticSearchSettings)
         {
             _searchClient = searchClient;
-
             _elasticSearchSettings = elasticSearchSettings;
-
             _managerClient = managerClient;
         }
 
-        // GET: api/product/search ??=> /api/product/wine
-        //[HttpGet("api/[controller]/[action]/{value}")]
-        [Route("Search/{value}")]
+
+        // GET: api/product/search/value
+        /// <summary>
+        /// Get a list of products matching the search term
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET api/product/search/wine
+        ///
+        /// </remarks>
+        ///// <param name="value">The search Terme</param>
+        ///// <returns>Products matching the search term</returns>
+        [Route("search/{value}")]
         public IEnumerable<Product> Search(string value)
         {
-            log.Info($"oh yeah value = {value}");
             var res = _searchClient.Search(value, 1, 1000, x => x.Name);
             return res;
         }
 
         // GET: api/product
+        /// <summary>
+        /// Get all the products
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET api/product/search
+        ///
+        /// </remarks>
+        ///// <returns>All the products</returns>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Product> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Search(null);
         }
 
-        // GET: api/product/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        // GET: api/product/1
+        /// <summary>
+        /// Get the product by the given id
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET api/product/1
+        ///
+        /// </remarks>
+        ///// <param name="value">The product id</param>
+        ///// <returns>Product identified by the given id</returns>
+        [HttpGet("{id}")]
+        public ActionResult Get(int id)
         {
-            return "value";
+            var res = _searchClient.Get(id.ToString());
+            return Json(res);
         }
 
         // POST: api/product

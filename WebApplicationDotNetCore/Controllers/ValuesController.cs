@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Api.Demo.Models;
+using log4net;
+using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using WebApplicationDotNetCore.Models;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using log4net;
 
 namespace WebApplicationDotNetCore.Controllers
 {
