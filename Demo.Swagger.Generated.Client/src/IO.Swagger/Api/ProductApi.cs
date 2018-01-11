@@ -33,53 +33,51 @@ namespace IO.Swagger.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IValuesApi : IApiAccessor
+    public interface IProductApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get a person matching given an id and name in input.
+        /// 
         /// </summary>
         /// <remarks>
-        /// Sample request:                    GET api/values/1/helen
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <returns>Person</returns>
-        Person ApiValuesByIdByNameGet (int? id, string name);
+        /// <returns></returns>
+        void ApiProductByIdDelete (int? id);
 
         /// <summary>
-        /// Get a person matching given an id and name in input.
+        /// 
         /// </summary>
         /// <remarks>
-        /// Sample request:                    GET api/values/1/helen
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <returns>ApiResponse of Person</returns>
-        ApiResponse<Person> ApiValuesByIdByNameGetWithHttpInfo (int? id, string name);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiProductByIdDeleteWithHttpInfo (int? id);
         /// <summary>
-        /// Get a value
+        /// Get the product by the given id
         /// </summary>
         /// <remarks>
-        /// Sample request:                    GET api/values/5
+        /// Sample request:                    GET api/product/1
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>string</returns>
-        string ApiValuesByIdGet (int? id);
+        /// <returns></returns>
+        void ApiProductByIdGet (int? id);
 
         /// <summary>
-        /// Get a value
+        /// Get the product by the given id
         /// </summary>
         /// <remarks>
-        /// Sample request:                    GET api/values/5
+        /// Sample request:                    GET api/product/1
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> ApiValuesByIdGetWithHttpInfo (int? id);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiProductByIdGetWithHttpInfo (int? id);
         /// <summary>
         /// 
         /// </summary>
@@ -90,7 +88,7 @@ namespace IO.Swagger.Api
         /// <param name="id"></param>
         /// <param name="value"> (optional)</param>
         /// <returns></returns>
-        void ApiValuesByIdPut (int? id, string value = null);
+        void ApiProductByIdPut (int? id, string value = null);
 
         /// <summary>
         /// 
@@ -102,26 +100,26 @@ namespace IO.Swagger.Api
         /// <param name="id"></param>
         /// <param name="value"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiValuesByIdPutWithHttpInfo (int? id, string value = null);
+        ApiResponse<Object> ApiProductByIdPutWithHttpInfo (int? id, string value = null);
         /// <summary>
-        /// 
+        /// Get all the products
         /// </summary>
         /// <remarks>
-        /// 
+        /// Sample request:                    GET api/product/search
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;string&gt;</returns>
-        List<string> ApiValuesGet ();
+        /// <returns>List&lt;Product&gt;</returns>
+        List<Product> ApiProductGet ();
 
         /// <summary>
-        /// 
+        /// Get all the products
         /// </summary>
         /// <remarks>
-        /// 
+        /// Sample request:                    GET api/product/search
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> ApiValuesGetWithHttpInfo ();
+        /// <returns>ApiResponse of List&lt;Product&gt;</returns>
+        ApiResponse<List<Product>> ApiProductGetWithHttpInfo ();
         /// <summary>
         /// 
         /// </summary>
@@ -131,7 +129,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="value"> (optional)</param>
         /// <returns></returns>
-        void ApiValuesPost (string value = null);
+        void ApiProductPost (string value = null);
 
         /// <summary>
         /// 
@@ -142,53 +140,72 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="value"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiValuesPostWithHttpInfo (string value = null);
+        ApiResponse<Object> ApiProductPostWithHttpInfo (string value = null);
+        /// <summary>
+        /// Get a list of products matching the search term
+        /// </summary>
+        /// <remarks>
+        /// Sample request:                    GET api/product/search/wine
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="value"></param>
+        /// <returns>List&lt;Product&gt;</returns>
+        List<Product> ApiProductSearchByValueGet (string value);
+
+        /// <summary>
+        /// Get a list of products matching the search term
+        /// </summary>
+        /// <remarks>
+        /// Sample request:                    GET api/product/search/wine
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="value"></param>
+        /// <returns>ApiResponse of List&lt;Product&gt;</returns>
+        ApiResponse<List<Product>> ApiProductSearchByValueGetWithHttpInfo (string value);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Get a person matching given an id and name in input.
+        /// 
         /// </summary>
         /// <remarks>
-        /// Sample request:                    GET api/values/1/helen
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <returns>Task of Person</returns>
-        System.Threading.Tasks.Task<Person> ApiValuesByIdByNameGetAsync (int? id, string name);
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiProductByIdDeleteAsync (int? id);
 
         /// <summary>
-        /// Get a person matching given an id and name in input.
+        /// 
         /// </summary>
         /// <remarks>
-        /// Sample request:                    GET api/values/1/helen
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <returns>Task of ApiResponse (Person)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Person>> ApiValuesByIdByNameGetAsyncWithHttpInfo (int? id, string name);
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiProductByIdDeleteAsyncWithHttpInfo (int? id);
         /// <summary>
-        /// Get a value
+        /// Get the product by the given id
         /// </summary>
         /// <remarks>
-        /// Sample request:                    GET api/values/5
+        /// Sample request:                    GET api/product/1
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> ApiValuesByIdGetAsync (int? id);
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiProductByIdGetAsync (int? id);
 
         /// <summary>
-        /// Get a value
+        /// Get the product by the given id
         /// </summary>
         /// <remarks>
-        /// Sample request:                    GET api/values/5
+        /// Sample request:                    GET api/product/1
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> ApiValuesByIdGetAsyncWithHttpInfo (int? id);
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiProductByIdGetAsyncWithHttpInfo (int? id);
         /// <summary>
         /// 
         /// </summary>
@@ -199,7 +216,7 @@ namespace IO.Swagger.Api
         /// <param name="id"></param>
         /// <param name="value"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiValuesByIdPutAsync (int? id, string value = null);
+        System.Threading.Tasks.Task ApiProductByIdPutAsync (int? id, string value = null);
 
         /// <summary>
         /// 
@@ -211,26 +228,26 @@ namespace IO.Swagger.Api
         /// <param name="id"></param>
         /// <param name="value"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiValuesByIdPutAsyncWithHttpInfo (int? id, string value = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiProductByIdPutAsyncWithHttpInfo (int? id, string value = null);
         /// <summary>
-        /// 
+        /// Get all the products
         /// </summary>
         /// <remarks>
-        /// 
+        /// Sample request:                    GET api/product/search
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> ApiValuesGetAsync ();
+        /// <returns>Task of List&lt;Product&gt;</returns>
+        System.Threading.Tasks.Task<List<Product>> ApiProductGetAsync ();
 
         /// <summary>
-        /// 
+        /// Get all the products
         /// </summary>
         /// <remarks>
-        /// 
+        /// Sample request:                    GET api/product/search
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiValuesGetAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (List&lt;Product&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Product>>> ApiProductGetAsyncWithHttpInfo ();
         /// <summary>
         /// 
         /// </summary>
@@ -240,7 +257,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="value"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiValuesPostAsync (string value = null);
+        System.Threading.Tasks.Task ApiProductPostAsync (string value = null);
 
         /// <summary>
         /// 
@@ -251,22 +268,43 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="value"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiValuesPostAsyncWithHttpInfo (string value = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiProductPostAsyncWithHttpInfo (string value = null);
+        /// <summary>
+        /// Get a list of products matching the search term
+        /// </summary>
+        /// <remarks>
+        /// Sample request:                    GET api/product/search/wine
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="value"></param>
+        /// <returns>Task of List&lt;Product&gt;</returns>
+        System.Threading.Tasks.Task<List<Product>> ApiProductSearchByValueGetAsync (string value);
+
+        /// <summary>
+        /// Get a list of products matching the search term
+        /// </summary>
+        /// <remarks>
+        /// Sample request:                    GET api/product/search/wine
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="value"></param>
+        /// <returns>Task of ApiResponse (List&lt;Product&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Product>>> ApiProductSearchByValueGetAsyncWithHttpInfo (string value);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ValuesApi : IValuesApi
+    public partial class ProductApi : IProductApi
     {
         private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ValuesApi"/> class.
+        /// Initializes a new instance of the <see cref="ProductApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ValuesApi(String basePath)
+        public ProductApi(String basePath)
         {
             this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -280,12 +318,12 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ValuesApi"/> class
+        /// Initializes a new instance of the <see cref="ProductApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ValuesApi(Configuration configuration = null)
+        public ProductApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -365,35 +403,29 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get a person matching given an id and name in input. Sample request:                    GET api/values/1/helen
+        ///  
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <returns>Person</returns>
-        public Person ApiValuesByIdByNameGet (int? id, string name)
+        /// <returns></returns>
+        public void ApiProductByIdDelete (int? id)
         {
-             ApiResponse<Person> localVarResponse = ApiValuesByIdByNameGetWithHttpInfo(id, name);
-             return localVarResponse.Data;
+             ApiProductByIdDeleteWithHttpInfo(id);
         }
 
         /// <summary>
-        /// Get a person matching given an id and name in input. Sample request:                    GET api/values/1/helen
+        ///  
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <returns>ApiResponse of Person</returns>
-        public ApiResponse< Person > ApiValuesByIdByNameGetWithHttpInfo (int? id, string name)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> ApiProductByIdDeleteWithHttpInfo (int? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ValuesApi->ApiValuesByIdByNameGet");
-            // verify the required parameter 'name' is set
-            if (name == null)
-                throw new ApiException(400, "Missing required parameter 'name' when calling ValuesApi->ApiValuesByIdByNameGet");
+                throw new ApiException(400, "Missing required parameter 'id' when calling ProductApi->ApiProductByIdDelete");
 
-            var localVarPath = "/api/Values/{id}/{name}";
+            var localVarPath = "/api/Product/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -408,7 +440,6 @@ namespace IO.Swagger.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -418,59 +449,52 @@ namespace IO.Swagger.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (name != null) localVarPathParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // path parameter
 
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ApiValuesByIdByNameGet", localVarResponse);
+                Exception exception = ExceptionFactory("ApiProductByIdDelete", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Person>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Person) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Person)));
             
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
-        /// Get a person matching given an id and name in input. Sample request:                    GET api/values/1/helen
+        ///  
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <returns>Task of Person</returns>
-        public async System.Threading.Tasks.Task<Person> ApiValuesByIdByNameGetAsync (int? id, string name)
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiProductByIdDeleteAsync (int? id)
         {
-             ApiResponse<Person> localVarResponse = await ApiValuesByIdByNameGetAsyncWithHttpInfo(id, name);
-             return localVarResponse.Data;
+             await ApiProductByIdDeleteAsyncWithHttpInfo(id);
 
         }
 
         /// <summary>
-        /// Get a person matching given an id and name in input. Sample request:                    GET api/values/1/helen
+        ///  
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <returns>Task of ApiResponse (Person)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Person>> ApiValuesByIdByNameGetAsyncWithHttpInfo (int? id, string name)
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ApiProductByIdDeleteAsyncWithHttpInfo (int? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ValuesApi->ApiValuesByIdByNameGet");
-            // verify the required parameter 'name' is set
-            if (name == null)
-                throw new ApiException(400, "Missing required parameter 'name' when calling ValuesApi->ApiValuesByIdByNameGet");
+                throw new ApiException(400, "Missing required parameter 'id' when calling ProductApi->ApiProductByIdDelete");
 
-            var localVarPath = "/api/Values/{id}/{name}";
+            var localVarPath = "/api/Product/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -485,7 +509,6 @@ namespace IO.Swagger.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -495,53 +518,51 @@ namespace IO.Swagger.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (name != null) localVarPathParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // path parameter
 
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ApiValuesByIdByNameGet", localVarResponse);
+                Exception exception = ExceptionFactory("ApiProductByIdDelete", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Person>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Person) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Person)));
             
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
-        /// Get a value Sample request:                    GET api/values/5
+        /// Get the product by the given id Sample request:                    GET api/product/1
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>string</returns>
-        public string ApiValuesByIdGet (int? id)
+        /// <returns></returns>
+        public void ApiProductByIdGet (int? id)
         {
-             ApiResponse<string> localVarResponse = ApiValuesByIdGetWithHttpInfo(id);
-             return localVarResponse.Data;
+             ApiProductByIdGetWithHttpInfo(id);
         }
 
         /// <summary>
-        /// Get a value Sample request:                    GET api/values/5
+        /// Get the product by the given id Sample request:                    GET api/product/1
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of string</returns>
-        public ApiResponse< string > ApiValuesByIdGetWithHttpInfo (int? id)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> ApiProductByIdGetWithHttpInfo (int? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ValuesApi->ApiValuesByIdGet");
+                throw new ApiException(400, "Missing required parameter 'id' when calling ProductApi->ApiProductByIdGet");
 
-            var localVarPath = "/api/Values/{id}";
+            var localVarPath = "/api/Product/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -556,7 +577,6 @@ namespace IO.Swagger.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -577,42 +597,41 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ApiValuesByIdGet", localVarResponse);
+                Exception exception = ExceptionFactory("ApiProductByIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<string>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (string) Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
             
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
-        /// Get a value Sample request:                    GET api/values/5
+        /// Get the product by the given id Sample request:                    GET api/product/1
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> ApiValuesByIdGetAsync (int? id)
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiProductByIdGetAsync (int? id)
         {
-             ApiResponse<string> localVarResponse = await ApiValuesByIdGetAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+             await ApiProductByIdGetAsyncWithHttpInfo(id);
 
         }
 
         /// <summary>
-        /// Get a value Sample request:                    GET api/values/5
+        /// Get the product by the given id Sample request:                    GET api/product/1
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<string>> ApiValuesByIdGetAsyncWithHttpInfo (int? id)
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ApiProductByIdGetAsyncWithHttpInfo (int? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ValuesApi->ApiValuesByIdGet");
+                throw new ApiException(400, "Missing required parameter 'id' when calling ProductApi->ApiProductByIdGet");
 
-            var localVarPath = "/api/Values/{id}";
+            var localVarPath = "/api/Product/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -627,7 +646,6 @@ namespace IO.Swagger.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -648,14 +666,14 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ApiValuesByIdGet", localVarResponse);
+                Exception exception = ExceptionFactory("ApiProductByIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<string>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (string) Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
             
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
@@ -665,9 +683,9 @@ namespace IO.Swagger.Api
         /// <param name="id"></param>
         /// <param name="value"> (optional)</param>
         /// <returns></returns>
-        public void ApiValuesByIdPut (int? id, string value = null)
+        public void ApiProductByIdPut (int? id, string value = null)
         {
-             ApiValuesByIdPutWithHttpInfo(id, value);
+             ApiProductByIdPutWithHttpInfo(id, value);
         }
 
         /// <summary>
@@ -677,13 +695,13 @@ namespace IO.Swagger.Api
         /// <param name="id"></param>
         /// <param name="value"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ApiValuesByIdPutWithHttpInfo (int? id, string value = null)
+        public ApiResponse<Object> ApiProductByIdPutWithHttpInfo (int? id, string value = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ValuesApi->ApiValuesByIdPut");
+                throw new ApiException(400, "Missing required parameter 'id' when calling ProductApi->ApiProductByIdPut");
 
-            var localVarPath = "/api/Values/{id}";
+            var localVarPath = "/api/Product/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -693,9 +711,10 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/json-patch+json"
+                "application/_*+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -729,7 +748,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ApiValuesByIdPut", localVarResponse);
+                Exception exception = ExceptionFactory("ApiProductByIdPut", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -746,9 +765,9 @@ namespace IO.Swagger.Api
         /// <param name="id"></param>
         /// <param name="value"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiValuesByIdPutAsync (int? id, string value = null)
+        public async System.Threading.Tasks.Task ApiProductByIdPutAsync (int? id, string value = null)
         {
-             await ApiValuesByIdPutAsyncWithHttpInfo(id, value);
+             await ApiProductByIdPutAsyncWithHttpInfo(id, value);
 
         }
 
@@ -759,13 +778,13 @@ namespace IO.Swagger.Api
         /// <param name="id"></param>
         /// <param name="value"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ApiValuesByIdPutAsyncWithHttpInfo (int? id, string value = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ApiProductByIdPutAsyncWithHttpInfo (int? id, string value = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ValuesApi->ApiValuesByIdPut");
+                throw new ApiException(400, "Missing required parameter 'id' when calling ProductApi->ApiProductByIdPut");
 
-            var localVarPath = "/api/Values/{id}";
+            var localVarPath = "/api/Product/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -775,9 +794,10 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/json-patch+json"
+                "application/_*+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -811,7 +831,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ApiValuesByIdPut", localVarResponse);
+                Exception exception = ExceptionFactory("ApiProductByIdPut", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -822,25 +842,25 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        ///  
+        /// Get all the products Sample request:                    GET api/product/search
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;string&gt;</returns>
-        public List<string> ApiValuesGet ()
+        /// <returns>List&lt;Product&gt;</returns>
+        public List<Product> ApiProductGet ()
         {
-             ApiResponse<List<string>> localVarResponse = ApiValuesGetWithHttpInfo();
+             ApiResponse<List<Product>> localVarResponse = ApiProductGetWithHttpInfo();
              return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Get all the products Sample request:                    GET api/product/search
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public ApiResponse< List<string> > ApiValuesGetWithHttpInfo ()
+        /// <returns>ApiResponse of List&lt;Product&gt;</returns>
+        public ApiResponse< List<Product> > ApiProductGetWithHttpInfo ()
         {
 
-            var localVarPath = "/api/Values";
+            var localVarPath = "/api/Product";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -875,37 +895,37 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ApiValuesGet", localVarResponse);
+                Exception exception = ExceptionFactory("ApiProductGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<string>>(localVarStatusCode,
+            return new ApiResponse<List<Product>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<string>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)));
+                (List<Product>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Product>)));
             
         }
 
         /// <summary>
-        ///  
+        /// Get all the products Sample request:                    GET api/product/search
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> ApiValuesGetAsync ()
+        /// <returns>Task of List&lt;Product&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Product>> ApiProductGetAsync ()
         {
-             ApiResponse<List<string>> localVarResponse = await ApiValuesGetAsyncWithHttpInfo();
+             ApiResponse<List<Product>> localVarResponse = await ApiProductGetAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        ///  
+        /// Get all the products Sample request:                    GET api/product/search
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<string>>> ApiValuesGetAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (List&lt;Product&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Product>>> ApiProductGetAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/api/Values";
+            var localVarPath = "/api/Product";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -940,13 +960,13 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ApiValuesGet", localVarResponse);
+                Exception exception = ExceptionFactory("ApiProductGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<string>>(localVarStatusCode,
+            return new ApiResponse<List<Product>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<string>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)));
+                (List<Product>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Product>)));
             
         }
 
@@ -956,9 +976,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="value"> (optional)</param>
         /// <returns></returns>
-        public void ApiValuesPost (string value = null)
+        public void ApiProductPost (string value = null)
         {
-             ApiValuesPostWithHttpInfo(value);
+             ApiProductPostWithHttpInfo(value);
         }
 
         /// <summary>
@@ -967,10 +987,10 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="value"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ApiValuesPostWithHttpInfo (string value = null)
+        public ApiResponse<Object> ApiProductPostWithHttpInfo (string value = null)
         {
 
-            var localVarPath = "/api/Values";
+            var localVarPath = "/api/Product";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -980,9 +1000,10 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/json-patch+json"
+                "application/_*+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1015,7 +1036,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ApiValuesPost", localVarResponse);
+                Exception exception = ExceptionFactory("ApiProductPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1031,9 +1052,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="value"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiValuesPostAsync (string value = null)
+        public async System.Threading.Tasks.Task ApiProductPostAsync (string value = null)
         {
-             await ApiValuesPostAsyncWithHttpInfo(value);
+             await ApiProductPostAsyncWithHttpInfo(value);
 
         }
 
@@ -1043,10 +1064,10 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="value"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ApiValuesPostAsyncWithHttpInfo (string value = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ApiProductPostAsyncWithHttpInfo (string value = null)
         {
 
-            var localVarPath = "/api/Values";
+            var localVarPath = "/api/Product";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1056,9 +1077,10 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/json-patch+json"
+                "application/_*+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1091,7 +1113,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ApiValuesPost", localVarResponse);
+                Exception exception = ExceptionFactory("ApiProductPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1099,6 +1121,147 @@ namespace IO.Swagger.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
+        }
+
+        /// <summary>
+        /// Get a list of products matching the search term Sample request:                    GET api/product/search/wine
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="value"></param>
+        /// <returns>List&lt;Product&gt;</returns>
+        public List<Product> ApiProductSearchByValueGet (string value)
+        {
+             ApiResponse<List<Product>> localVarResponse = ApiProductSearchByValueGetWithHttpInfo(value);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a list of products matching the search term Sample request:                    GET api/product/search/wine
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="value"></param>
+        /// <returns>ApiResponse of List&lt;Product&gt;</returns>
+        public ApiResponse< List<Product> > ApiProductSearchByValueGetWithHttpInfo (string value)
+        {
+            // verify the required parameter 'value' is set
+            if (value == null)
+                throw new ApiException(400, "Missing required parameter 'value' when calling ProductApi->ApiProductSearchByValueGet");
+
+            var localVarPath = "/api/Product/search/{value}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (value != null) localVarPathParams.Add("value", Configuration.ApiClient.ParameterToString(value)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiProductSearchByValueGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Product>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Product>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Product>)));
+            
+        }
+
+        /// <summary>
+        /// Get a list of products matching the search term Sample request:                    GET api/product/search/wine
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="value"></param>
+        /// <returns>Task of List&lt;Product&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Product>> ApiProductSearchByValueGetAsync (string value)
+        {
+             ApiResponse<List<Product>> localVarResponse = await ApiProductSearchByValueGetAsyncWithHttpInfo(value);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get a list of products matching the search term Sample request:                    GET api/product/search/wine
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="value"></param>
+        /// <returns>Task of ApiResponse (List&lt;Product&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Product>>> ApiProductSearchByValueGetAsyncWithHttpInfo (string value)
+        {
+            // verify the required parameter 'value' is set
+            if (value == null)
+                throw new ApiException(400, "Missing required parameter 'value' when calling ProductApi->ApiProductSearchByValueGet");
+
+            var localVarPath = "/api/Product/search/{value}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (value != null) localVarPathParams.Add("value", Configuration.ApiClient.ParameterToString(value)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiProductSearchByValueGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Product>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Product>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Product>)));
+            
         }
 
     }

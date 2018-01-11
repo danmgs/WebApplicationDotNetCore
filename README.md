@@ -76,17 +76,22 @@ POST /product/default/_bulk
 
 ## How to generate the swagger proxy client :
 
-There are many ways to generate the proxy client:
+There are many ways to generate the proxy client from the deployed api url.\
+Note in my case, API is deployed under http://localhost:53626/
 
 ### 1. Use of Swagger editor website
 
 1.1 Swagger configuration is setup in class **WebApplicationDotNetCore\Startup.cs**
 
-1.2 Launch WebApplicationDotNetCore and access api endpoint: http://localhost:53626/swagger/v1/swagger.json via postman, in order to copy return content.
+1.2 Launch WebApplicationDotNetCore and access api endpoint: http://localhost:53626/swagger/v1/swagger.json via postman, in order to retrieve return API meta-data in json.
 
-1.3 Go to http://editor.swagger.io/ 
+1.3 Go to http://editor.swagger.io/  and copy this json content.
+
+1.4 Click Generate Client
 
 ### 2. Use of command line with **swagger-codegen-cli-x.y.z.jar**:
+
+Download swagger-codegen-cli here : https://swagger.io/docs/swagger-tools/
 
 ```
 java -jar swagger-codegen-cli-2.2.1.jar generate -i http://localhost:53626/swagger/v1/swagger.json -l csharp
@@ -100,6 +105,8 @@ https://dzimchuk.net/generating-clients-for-your-apis-with-autorest/
 C:\Apps\Tools\Autorest>autorest --input-file=swagger.yaml --csharp --output-folder=CSharp_MyClient --namespace=MyClientNamesp
 ```
 
+The generated codes sources has been put into directory **\Api.Demo.Swagger.Generated.Client**
+<br />
 
 ## Useful Links
 
@@ -130,15 +137,19 @@ http://rdonfack.developpez.com/tutoriels/dotnet/nouveautes-aspnet-core-2/
 
 ### Dependency Injection
 https://hassantariqblog.wordpress.com/2017/02/20/asp-net-core-step-by-step-guide-to-access-appsettings-json-in-web-project-and-class-library/
+
 https://cmatskas.com/net-core-dependency-injection-with-constructor-parameters-2/
 
 ### ASP.NET Core Routing
 https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing
+
 https://stormpath.com/blog/routing-in-asp-net-core
 
 ### ElasticSearch Nest C#
 https://github.com/youthpassion0732/ElasticSearchConsoleApp
+
 https://hassantariqblog.wordpress.com/2016/09/21/elastic-search-getting-document-using-nest-in-net/
+
 https://www.devbridge.com/articles/getting-started-with-elastic-using-net-nest-library-part-two/#
 
 ### Hosting in .NET Core (Program.cs)

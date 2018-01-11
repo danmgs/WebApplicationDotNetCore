@@ -31,7 +31,6 @@ namespace WebApplicationDotNetCore.Controllers
             _managerClient = managerClient;
         }
 
-
         // GET: api/product/search/value
         /// <summary>
         /// Get a list of products matching the search term
@@ -44,7 +43,7 @@ namespace WebApplicationDotNetCore.Controllers
         /// </remarks>
         ///// <param name="value">The search Terme</param>
         ///// <returns>Products matching the search term</returns>
-        [Route("search/{value}")]
+        [HttpGet("search/{value}")]
         public IEnumerable<Product> Search(string value)
         {
             var res = _searchClient.Search(value, 1, 1000, x => x.Name);
@@ -92,6 +91,7 @@ namespace WebApplicationDotNetCore.Controllers
         public void Post([FromBody]string value)
         {
         }
+
         
         // PUT: api/product/5
         [HttpPut("{id}")]
