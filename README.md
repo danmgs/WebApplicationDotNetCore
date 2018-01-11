@@ -5,7 +5,9 @@ An application that exposes web api url, by leveraging Swagger, ElasticSearch an
 
 Postman client to test available web api endpoint :
 
-![alt capture1](https://github.com/danmgs/Elasticsearch-Nodejs.Quickstart/blob/master/img/screenshot1.PNG)
+![alt capture1](https://github.com/danmgs/WebApplicationDotNetCore/blob/master/img/screenshot1.PNG)
+
+<br />
 
 ## Folders Organisation
 
